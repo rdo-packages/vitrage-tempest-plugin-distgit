@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa963961_4bad8d87",
+        "filename": "python-vitrage-tests-tempest.spec",
+        "patchSetId": 2
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 113
+      },
+      "writtenOn": "2018-01-09T14:29:51Z",
+      "side": 1,
+      "message": "I would assume python3-vitrage should be needed for its tempest tests 8-). Instead of removing it, we should keep it but set with_python3 to 0 with a note explaining why.",
+      "revId": "7e44585f55a2aa91a3584a9c93cf6ff338ea3e87",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
