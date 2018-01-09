@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa963961_0b8f8524",
+        "filename": "python-vitrage-tests-tempest.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 113
+      },
+      "writtenOn": "2018-01-09T14:24:47Z",
+      "side": 1,
+      "message": "There is no python3-vitrage it seems, so we cannot enable the python3 subpackage for now.",
+      "range": {
+        "startLine": 90,
+        "startChar": 0,
+        "endLine": 90,
+        "endChar": 27
+      },
+      "revId": "0ac16535ee3d5ec9b5d323a75db9714be71d39a4",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
