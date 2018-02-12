@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aaa499b_85102150",
+        "filename": "python-vitrage-tests-tempest.spec",
+        "patchSetId": 2
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2018-02-12T13:43:58Z",
+      "side": 0,
+      "message": "I think python-vitrate is still needed, right?",
+      "range": {
+        "startLine": 58,
+        "startChar": 12,
+        "endLine": 58,
+        "endChar": 26
+      },
+      "revId": "e642999fe575470b95b994763075b220d3626c85",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
