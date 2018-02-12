@@ -26,6 +26,8 @@ URL:        https://git.openstack.org/cgit/openstack/%{plugin}/
 Source0:    http://tarballs.openstack.org/%{plugin}/%{plugin}-%{upstream_version}.tar.gz
 
 BuildArch:  noarch
+BuildRequires:  git
+BuildRequires:  openstack-macros
 
 %description
 %{common_desc}
@@ -34,32 +36,33 @@ BuildArch:  noarch
 Summary: %{summary}
 %{?python_provide:%python_provide python2-%{service}-tests-tempest}
 BuildRequires:  python2-devel
-BuildRequires:  python-pbr
-BuildRequires:  python-setuptools
-BuildRequires:  git
-BuildRequires:  openstack-macros
+BuildRequires:  python2-pbr
+BuildRequires:  python2-setuptools
 
-Requires:   python-tempest >= 1:16.0.0
-Requires:   python-pbr
-Requires:   python-oslo-config
-Requires:   python-oslo-log
-Requires:   python-oslo-serialization
-Requires:   python-keystoneclient
-Requires:   python-heatclient
-Requires:   python-ceilometerclient
-Requires:   python-cinderclient
-Requires:   python-neutronclient
-Requires:   python-novaclient
-Requires:   python-mistralclient
-Requires:   python-glanceclient
-Requires:   python-aodhclient
-Requires:   python-six
-Requires:   python-dateutil
-Requires:   python-vitrage
-Requires:   python-testtools
-Requires:   python-oslotest
-Requires:   python-vitrageclient
+Requires:   python2-tempest >= 1:17.2.0
+Requires:   python2-pbr >= 2.0.0
+Requires:   python2-oslo-config >= 2:4.0.0
+Requires:   python2-oslo-log >= 3.30.0
+Requires:   python2-oslo-serialization >= 2.18.0
+Requires:   python2-keystoneclient
+Requires:   python2-heatclient
+Requires:   python2-ceilometerclient
+Requires:   python2-cinderclient
+Requires:   python2-neutronclient
+Requires:   python2-novaclient
+Requires:   python2-mistralclient
+Requires:   python2-glanceclient
+Requires:   python2-aodhclient
+Requires:   python2-six => 1.10.0
+Requires:   python2-dateutil
+Requires:   python2-testtools
+Requires:   python2-oslotest
+Requires:   python2-vitrageclient
+%if 0%{?fedora}
+Requires:   python2-networkx
+%else
 Requires:   python-networkx
+%endif
 
 
 %description -n python2-%{service}-tests-tempest
@@ -73,11 +76,11 @@ BuildRequires:  python3-devel
 BuildRequires:  python3-pbr
 BuildRequires:  python3-setuptools
 
-Requires:   python3-tempest >= 1:16.0.0
-Requires:   python3-pbr
-Requires:   python3-oslo-config
-Requires:   python3-oslo-log
-Requires:   python3-oslo-serialization
+Requires:   python3-tempest >= 1:17.2.0
+Requires:   python3-pbr >= 2.0.0
+Requires:   python3-oslo-config >= 2:4.0.0
+Requires:   python3-oslo-log >= 3.30.0
+Requires:   python3-oslo-serialization >= 2.18.0
 Requires:   python3-keystoneclient
 Requires:   python3-heatclient
 Requires:   python3-ceilometerclient
@@ -87,11 +90,10 @@ Requires:   python3-novaclient
 Requires:   python3-mistralclient
 Requires:   python3-glanceclient
 Requires:   python3-aodhclient
-Requires:   python3-six
+Requires:   python3-six => 1.10.0
 Requires:   python3-dateutil
 Requires:   python3-testtools
 Requires:   python3-oslotest
-Requires:   python3-vitrage
 Requires:   python3-vitrageclient
 Requires:   python3-networkx
 
@@ -104,8 +106,8 @@ Requires:   python3-networkx
 %package -n python-%{service}-tests-tempest-doc
 Summary:        python-%{service}-tests-tempest documentation
 
-BuildRequires:  python-sphinx
-BuildRequires:  python-openstackdocstheme
+BuildRequires:  python2-sphinx
+BuildRequires:  python2-openstackdocstheme
 
 %description -n python-%{service}-tests-tempest-doc
 It contains the documentation for the vitrage tempest plugin.
