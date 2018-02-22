@@ -1,6 +1,6 @@
 %global service vitrage
 %global plugin vitrage-tempest-plugin
-%global module vitrage_tempest_tests
+%global module vitrage_tempest_plugin
 %global with_doc 1
 
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
