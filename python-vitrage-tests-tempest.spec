@@ -6,9 +6,11 @@
 
 %global service vitrage
 %global plugin vitrage-tempest-plugin
-%global module vitrage_tempest_tests
+%global module vitrage_tempest_plugin
 # FIXME(ChandanKumar) FIx doc building step
 %global with_doc 0
+
+%{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 
 %if 0%{?fedora}
 # Disabling python3 subpackage as python3-vitrage is not available.
