@@ -176,3 +176,4 @@ rm -rf doc/build/html/.{doctrees,buildinfo}
 %changelog
 * Mon Feb 19 2018 Chandan Kumar <chkumar@redhat.com> 0.0.1-0.1.493c933cgit
 - Update to pre-release 0.0.1 (493c933c131e47df1383b734af96e2ea3f6ca03c)
+# REMOVEME: error caused by commit http://git.openstack.org/cgit/openstack/vitrage-tempest-plugin/commit/?id=8534ccb72180c920c6a36663e07c07d82a27ab76
