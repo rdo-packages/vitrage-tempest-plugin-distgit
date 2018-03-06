@@ -116,7 +116,7 @@ It contains the documentation for the vitrage tempest plugin.
 %endif
 
 %prep
-%autosetup -n %{module}-%{upstream_version} -S git
+%autosetup -n %{plugin}-%{upstream_version} -S git
 
 # Let's handle dependencies ourseleves
 %py_req_cleanup
