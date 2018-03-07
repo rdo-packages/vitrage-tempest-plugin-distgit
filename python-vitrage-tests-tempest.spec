@@ -1,14 +1,9 @@
-%{!?upstream_version: %global upstream_version %{commit}}
-%global commit 493c933c131e47df1383b734af96e2ea3f6ca03c
-%global shortcommit %(c=%{commit}; echo ${c:0:7})
-# DO NOT REMOVE ALPHATAG
-%global alphatag .%{shortcommit}git
+%{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 
 %global service vitrage
 %global plugin vitrage-tempest-plugin
 %global module vitrage_tempest_plugin
-# FIXME(ChandanKumar) FIx doc building step
-%global with_doc 0
+%global with_doc 1
 
 %if 0%{?fedora}
 # Disabling python3 subpackage as python3-vitrage is not available.
@@ -22,13 +17,13 @@ Additionally it provides a plugin to automatically load these \
 tests into Tempest.
 
 Name:       python-%{service}-tests-tempest
-Version:    0.0.1
-Release:    0.1%{?alphatag}%{?dist}
+Version:    1.0.0
+Release:    1%{?dist}
 Summary:    Tempest Integration of Vitrage Project
 License:    ASL 2.0
 URL:        https://git.openstack.org/cgit/openstack/%{plugin}/
 
-Source0:    http://github.com/openstack/%{plugin}/archive/%{commit}.tar.gz#/%{plugin}-%{shortcommit}.tar.gz
+Source0:    http://tarballs.openstack.org/%{plugin}/%{plugin}-%{upstream_version}.tar.gz
 
 BuildArch:  noarch
 BuildRequires:  git
@@ -168,5 +163,8 @@ rm -rf doc/build/html/.{doctrees,buildinfo}
 %endif
 
 %changelog
+* Wed Mar 07 2018 Chandan Kumar <chkumar@redhat.com> 1.0.0-1
+- Update to 1.0.0
+
 * Mon Feb 19 2018 Chandan Kumar <chkumar@redhat.com> 0.0.1-0.1.493c933cgit
 - Update to pre-release 0.0.1 (493c933c131e47df1383b734af96e2ea3f6ca03c)
