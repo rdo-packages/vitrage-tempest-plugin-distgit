@@ -59,6 +59,7 @@ Requires:   python2-six => 1.10.0
 Requires:   python2-dateutil
 Requires:   python2-testtools
 Requires:   python2-oslotest
+Requires:   python2-vitrageclient
 %if 0%{?fedora}
 Requires:   python2-networkx
 %else
@@ -97,6 +98,7 @@ Requires:   python3-six => 1.10.0
 Requires:   python3-dateutil
 Requires:   python3-testtools
 Requires:   python3-oslotest
+Requires:   python3-vitrageclient
 Requires:   python3-networkx
 
 %description -n python3-%{service}-tests-tempest
