@@ -18,7 +18,7 @@ tests into Tempest.
 
 Name:       python-%{service}-tests-tempest
 Version:    1.1.0
-Release:    1%{?dist}
+Release:    2%{?dist}
 Summary:    Tempest Integration of Vitrage Project
 License:    ASL 2.0
 URL:        https://git.openstack.org/cgit/openstack/%{plugin}/
@@ -59,6 +59,7 @@ Requires:   python2-six => 1.10.0
 Requires:   python2-dateutil
 Requires:   python2-testtools
 Requires:   python2-oslotest
+Requires:   python2-vitrageclient
 %if 0%{?fedora}
 Requires:   python2-networkx
 %else
@@ -97,6 +98,7 @@ Requires:   python3-six => 1.10.0
 Requires:   python3-dateutil
 Requires:   python3-testtools
 Requires:   python3-oslotest
+Requires:   python3-vitrageclient
 Requires:   python3-networkx
 
 %description -n python3-%{service}-tests-tempest
@@ -163,5 +165,8 @@ rm -rf doc/build/html/.{doctrees,buildinfo}
 %endif
 
 %changelog
+* Thu Aug 23 2018 Yatin Karel <ykarel@redhat.com> - 1.1.0-2
+- Add vitrageclient to Requires
+
 * Thu Aug 23 2018 Chandan Kumar <chkumar@redhat.com> 1.1.0-1
 - Update to 1.1.0
