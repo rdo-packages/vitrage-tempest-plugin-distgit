@@ -29,7 +29,6 @@ License:    ASL 2.0
 URL:        https://git.openstack.org/cgit/openstack/%{plugin}/
 
 Source0:    http://tarballs.openstack.org/%{plugin}/%{plugin}-%{upstream_version}.tar.gz
-Patch001:   0001-Fix-typo-in-.stestr.conf.patch
 
 BuildArch:  noarch
 BuildRequires:  git
