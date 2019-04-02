@@ -66,12 +66,16 @@ Requires:   python%{pyver}-testtools
 Requires:   python%{pyver}-oslotest
 Requires:   python%{pyver}-vitrageclient
 Requires:   python%{pyver}-vitrage
+Requires:   python%{pyver}-gnocchiclient >= 3.3.1
+Requires:   python%{pyver}-oslo-utils >= 3.36.0
 
 # Handle python2 exception
 %if %{pyver} == 2
 Requires:   python-networkx
+Requires:   PyYAML
 %else
 Requires:   python%{pyver}-networkx
+Requires:   python%{pyver}-PyYAML
 %endif
 
 
