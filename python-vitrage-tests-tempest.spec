@@ -1,14 +1,3 @@
-# Macros for py2/py3 compatibility
-%if 0%{?fedora} || 0%{?rhel} > 7
-%global pyver %{python3_pkgversion}
-%else
-%global pyver 2
-%endif
-%global pyver_bin python%{pyver}
-%global pyver_sitelib %python%{pyver}_sitelib
-%global pyver_install %py%{pyver}_install
-%global pyver_build %py%{pyver}_build
-# End of macros for py2/py3 compatibility
 %global service vitrage
 %global plugin vitrage-tempest-plugin
 %global module vitrage_tempest_plugin
@@ -37,57 +26,51 @@ BuildRequires:  openstack-macros
 %description
 %{common_desc}
 
-%package -n python%{pyver}-%{service}-tests-tempest
+%package -n python3-%{service}-tests-tempest
 Summary: %{summary}
-%{?python_provide:%python_provide python%{pyver}-%{service}-tests-tempest}
-BuildRequires:  python%{pyver}-devel
-BuildRequires:  python%{pyver}-pbr
-BuildRequires:  python%{pyver}-setuptools
+%{?python_provide:%python_provide python3-%{service}-tests-tempest}
+BuildRequires:  python3-devel
+BuildRequires:  python3-pbr
+BuildRequires:  python3-setuptools
 
 Obsoletes:   python-vitrage-tests < 2.2.0
 
-Requires:   python%{pyver}-tempest >= 1:18.0.0
-Requires:   python%{pyver}-pbr >= 3.1.1
-Requires:   python%{pyver}-oslo-config >= 2:5.2.0
-Requires:   python%{pyver}-oslo-log >= 3.36.0
-Requires:   python%{pyver}-oslo-serialization >= 2.18.0
-Requires:   python%{pyver}-keystoneclient
-Requires:   python%{pyver}-heatclient
-Requires:   python%{pyver}-ceilometerclient
-Requires:   python%{pyver}-cinderclient
-Requires:   python%{pyver}-neutronclient
-Requires:   python%{pyver}-novaclient
-Requires:   python%{pyver}-mistralclient
-Requires:   python%{pyver}-glanceclient
-Requires:   python%{pyver}-aodhclient
-Requires:   python%{pyver}-six => 1.10.0
-Requires:   python%{pyver}-dateutil
-Requires:   python%{pyver}-testtools
-Requires:   python%{pyver}-oslotest
-Requires:   python%{pyver}-vitrageclient
-Requires:   python%{pyver}-vitrage
-Requires:   python%{pyver}-gnocchiclient >= 3.3.1
-Requires:   python%{pyver}-oslo-utils >= 3.36.0
+Requires:   python3-tempest >= 1:18.0.0
+Requires:   python3-pbr >= 3.1.1
+Requires:   python3-oslo-config >= 2:5.2.0
+Requires:   python3-oslo-log >= 3.36.0
+Requires:   python3-oslo-serialization >= 2.18.0
+Requires:   python3-keystoneclient
+Requires:   python3-heatclient
+Requires:   python3-ceilometerclient
+Requires:   python3-cinderclient
+Requires:   python3-neutronclient
+Requires:   python3-novaclient
+Requires:   python3-mistralclient
+Requires:   python3-glanceclient
+Requires:   python3-aodhclient
+Requires:   python3-six => 1.10.0
+Requires:   python3-dateutil
+Requires:   python3-testtools
+Requires:   python3-oslotest
+Requires:   python3-vitrageclient
+Requires:   python3-vitrage
+Requires:   python3-gnocchiclient >= 3.3.1
+Requires:   python3-oslo-utils >= 3.36.0
 
-# Handle python2 exception
-%if %{pyver} == 2
-Requires:   python-networkx
-Requires:   PyYAML
-%else
-Requires:   python%{pyver}-networkx
-Requires:   python%{pyver}-PyYAML
-%endif
+Requires:   python3-networkx
+Requires:   python3-PyYAML
 
 
-%description -n python%{pyver}-%{service}-tests-tempest
+%description -n python3-%{service}-tests-tempest
 %{common_desc}
 
 %if 0%{?with_doc}
 %package -n python-%{service}-tests-tempest-doc
 Summary:        python-%{service}-tests-tempest documentation
 
-BuildRequires:  python%{pyver}-sphinx
-BuildRequires:  python%{pyver}-openstackdocstheme
+BuildRequires:  python3-sphinx
+BuildRequires:  python3-openstackdocstheme
 
 %description -n python-%{service}-tests-tempest-doc
 It contains the documentation for the vitrage tempest plugin.
@@ -102,23 +85,23 @@ It contains the documentation for the vitrage tempest plugin.
 rm -rf %{module}.egg-info
 
 %build
-%{pyver_build}
+%{py3_build}
 
 # Generate Docs
 %if 0%{?with_doc}
-sphinx-build-%{pyver} -W -b html doc/source doc/build/html
+sphinx-build -W -b html doc/source doc/build/html
 # remove the sphinx build leftovers
 rm -rf doc/build/html/.{doctrees,buildinfo}
 %endif
 
 %install
-%{pyver_install}
+%{py3_install}
 
-%files -n python%{pyver}-%{service}-tests-tempest
+%files -n python3-%{service}-tests-tempest
 %license LICENSE
 %doc README.rst
-%{pyver_sitelib}/%{module}
-%{pyver_sitelib}/*.egg-info
+%{python3_sitelib}/%{module}
+%{python3_sitelib}/*.egg-info
 
 %if 0%{?with_doc}
 %files -n python-%{service}-tests-tempest-doc
