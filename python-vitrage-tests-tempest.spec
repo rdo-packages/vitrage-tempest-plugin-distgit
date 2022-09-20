@@ -54,7 +54,6 @@ Requires:   python3-oslo-log >= 3.36.0
 Requires:   python3-oslo-serialization >= 2.18.0
 Requires:   python3-keystoneclient
 Requires:   python3-heatclient
-Requires:   python3-ceilometerclient
 Requires:   python3-cinderclient
 Requires:   python3-neutronclient
 Requires:   python3-novaclient
