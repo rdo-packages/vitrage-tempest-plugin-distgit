@@ -118,3 +118,4 @@ rm -rf doc/build/html/.{doctrees,buildinfo}
 %endif
 
 %changelog
+# REMOVEME: error caused by commit https://opendev.org/openstack/vitrage-tempest-plugin/commit/00abd07f08979af7f9219213ca55a29561f6b7ce
